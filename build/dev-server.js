@@ -14,7 +14,6 @@ export default () => {
 
     const app = new Koa()
 
-    console.log('')
     const proxyTable = config.dev.proxyTable;
     Object.keys(proxyTable).forEach(context => {
         let options = proxyTable[context]
@@ -25,7 +24,7 @@ export default () => {
                 logs: true
             }
         }
-        console.log(`==> Proxy ${context} --> ${options.target}`)
+        console.log(`🌹  Proxy ${context} --> ${options.target}`)
         app.use(proxy(context, options))
     })
 
@@ -47,8 +46,8 @@ export default () => {
 
     const port = config.dev.port || 8000;
     app.listen(port, () => {
-        console.log(`\n==> Listening at http://localhost:${port}`)
-        console.log(`==> Listening at http://${ip.address()}:${port}\n`)
+        console.log(`🌹  Listening at http://localhost:${port}`)
+        console.log(`🌹  Listening at http://${ip.address()}:${port}\n`)
     })
 
     // webpack(webpackDevConfig, (err, stats) => {

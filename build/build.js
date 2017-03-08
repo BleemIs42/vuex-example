@@ -18,15 +18,18 @@ export default () => {
       chunks: false,
       chunkModules: false
     }) + '\n')
+    console.log('\n🌹  Build finished')
   })
 
   const app = new Koa()
-  app.use(history({verbose: true}))
+  app.use(history({
+    verbose: true
+  }))
   app.use(server.static(path.resolve(__dirname, '../dist')))
 
   const port = config.build.port || 9000;
   app.listen(port, () => {
-    console.log(`\n==> Listening at http://localhost:${port}`)
-    console.log(`==> Listening at http://${ip.address()}:${port}\n`)
+    console.log(`🌹  Listening at http://localhost:${port}`)
+    console.log(`🌹  Listening at http://${ip.address()}:${port}\n`)
   })
 }

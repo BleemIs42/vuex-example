@@ -1,7 +1,7 @@
 import path from 'path'
 
 const env = process.env.NODE_ENV
-console.log(`\nNODE_ENV: "${env}"\n`)
+console.log(`\n🌹  NODE_ENV: "${env}"\n`)
 
 export default {
     env: env,
