@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
 import store from './store'
 import router from './router'
 import VueResource from 'vue-resource'
