@@ -1,6 +1,7 @@
 export default {
     state: {
-        list: []
+        list: [],
+        count: 0
     },
     actions: {
         fethList: ({commit, state }, params) => {
@@ -26,12 +27,20 @@ export default {
                     data: list
                 })
             })
+        },
+        addCount:({commit}) => {
+            commit('INCREMENT')
+        },
+        subCount: ({commit}) => {
+            commit('DECREMENT')
         }
     },
     mutations: {
         SET_LIST: (state, payload) => {
             state.list = payload.data
-        }
+        },
+        INCREMENT: state => state.count++,
+        DECREMENT: state => state.count--
     },
     getters: {
         listG: state => state.list
