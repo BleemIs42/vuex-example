@@ -53,7 +53,7 @@ export default {
     vue: {
         loaders: cssLoaders(),
         postcss: [
-            px2rem({remUnit: 70}),
+            px2rem({remUnit: 40}),
             autoprefixer({browsers: ['>1%']})
         ]
     },
